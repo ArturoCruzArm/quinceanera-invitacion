@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Servicios - Fotografía y Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 1.8;
+            margin-left: 20px;
+        }
+
+        .section-content p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .package-list {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .package-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .package-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .package-name {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .package-price {
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .package-details {
+            color: #666;
+            margin-left: 15px;
+            font-size: 0.95em;
+        }
+
+        .package-details li {
+            margin-bottom: 5px;
+        }
+
+        .signature-section {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .signature-block {
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 1px solid #333;
+            margin-top: 60px;
+            padding-top: 10px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .date-field {
+            margin-top: 30px;
+            color: #555;
+        }
+
+        .terms {
+            background: #fff0f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #764ba2;
+        }
+
+        .terms h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .terms ul {
+            margin-left: 20px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .terms li {
+            margin-bottom: 8px;
+        }
+
+        .important {
+            background: #ffffcc;
+            padding: 15px;
+            border-left: 4px solid #ff9800;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+
+        .important strong {
+            color: #ff6f00;
+        }
+
+        .print-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px;
+            }
+
+            .signature-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CONTRATO DE SERVICIOS</h1>
+            <p>Fotografía y Video - Evento de Quinceañera</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">I. INFORMACIÓN DEL EVENTO</div>
+            <div class="section-content">
+                <p><strong>Quinceañera:</strong> María Esther Santos García</p>
+                <p><strong>Papás:</strong> Esteban Santos Aviña y Elena Margarita García García</p>
+                <p><strong>Madrina:</strong> Nusve Ramírez Moya</p>
+                <p><strong>Fecha del Evento:</strong> 19 de Diciembre de 2025</p>
+                <p><strong>Lugar de Misa:</strong> Templo San Pablo Apóstol, Boulevard Zodiaco 310, Lomas de la Piscina, CP 37440 (1:00 PM)</p>
+                <p><strong>Lugar de Fiesta:</strong> La Haciendita, Santa María Auxiliadora 4371, Estancia, CP 37490 (3:00 PM)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">II. PAQUETES Y SERVICIOS</div>
+            <div class="section-content">
+                <div class="package-list">
+                    <div class="package-item">
+                        <div class="package-name">1. PAQUETE TRADICIONAL</div>
+                        <div class="package-price">Costo: $6,000 MXN</div>
+                        <div class="package-details">
+                            <ul>
+                                <li>100 fotos del evento</li>
+                                <li>1 ampliación 50x60 cm con marco</li>
+                                <li>Grabación completa del evento en video</li>
+                                <li>Archivos digitales en USB (4K)</li>
+                                <li>Sesión fotográfica previa con dron (incluida)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="package-item">
+                        <div class="package-name">2. PAQUETE CON FOTOLIBRO (SELECCIONADO)</div>
+                        <div class="package-price">Costo: $8,500 MXN</div>
+                        <div class="package-details">
+                            <ul>
+                                <li>1 fotolibro de 100 fotos</li>
+                                <li>1 ampliación 60x80 cm con marco</li>
+                                <li>Grabación completa del evento en video</li>
+                                <li>Archivos digitales en USB (4K)</li>
+                                <li>Sesión fotográfica previa con dron (incluida)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>⚠️ Paquete Contratado:</strong> Paquete con Fotolibro - $8,500 MXN
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">III. CONDICIONES DE PAGO</div>
+            <div class="section-content">
+                <p><strong>Monto Total:</strong> $8,500 MXN</p>
+                <p><strong>Anticipo Requerido:</strong> $1,000 MXN para reservar la fecha</p>
+                <p><strong>Saldo Restante:</strong> $7,500 MXN a pagarse antes del evento</p>
+                <p><strong>Forma de Pago:</strong> Transferencia bancaria a la cuenta designada por el fotógrafo</p>
+                <p><strong>Titular de la Cuenta:</strong> Juan Arturo Cruz Armenta</p>
+                <p><strong>Banco:</strong> BBVA</p>
+                <p><strong>Tarjeta de Débito:</strong> 4152 3137 6890 8985</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">IV. SERVICIOS INCLUIDOS</div>
+            <div class="section-content">
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Fotografía profesional durante toda la misa y la fiesta</li>
+                    <li>Grabación de video en resolución 4K</li>
+                    <li>Sesión fotográfica previa (prueba de maquillaje) con dron</li>
+                    <li>Ampliación de lujo con marco</li>
+                    <li>Fotolibro de alta calidad con 100 fotos seleccionadas</li>
+                    <li>Archivos digitales en USB de alta resolución</li>
+                    <li>Edición profesional de fotografías y video</li>
+                    <li>Transporte del equipo fotográfico</li>
+                    <li>Iluminación profesional (hasta 3 luces para exteriores)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">V. TÉRMINOS Y CONDICIONES</div>
+            <div class="terms">
+                <h4>Responsabilidades del Fotógrafo:</h4>
+                <ul>
+                    <li>Llegar con 30 minutos de anticipación al lugar del evento</li>
+                    <li>Proporcionar servicios profesionales durante toda la duración del evento</li>
+                    <li>Entregar archivos digitales editados en los plazos acordados</li>
+                    <li>Garantizar la calidad de las fotografías y videos</li>
+                    <li>Mantener confidencialidad sobre la información del cliente</li>
+                </ul>
+            </div>
+
+            <div class="terms">
+                <h4>Responsabilidades del Cliente:</h4>
+                <ul>
+                    <li>Realizar los pagos en las fechas acordadas</li>
+                    <li>Proporcionar información precisa del evento</li>
+                    <li>Informar con anticipación sobre cambios de fecha o horario</li>
+                    <li>Facilitar acceso a los lugares del evento</li>
+                    <li>Autorizar el uso de algunas fotos para portafolio del fotógrafo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">VI. POLÍTICA DE CANCELACIÓN</div>
+            <div class="section-content">
+                <p><strong>Cancelación 60 días antes:</strong> Reembolso del 100% del anticipo</p>
+                <p><strong>Cancelación 30-59 días antes:</strong> Reembolso del 50% del anticipo</p>
+                <p><strong>Cancelación menos de 30 días:</strong> Sin reembolso del anticipo</p>
+                <p><strong>Cambio de Fecha:</strong> Sujeto a disponibilidad del fotógrafo. Solo una fecha se puede cambiar sin costo adicional.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">VII. ENTREGA DE ARCHIVOS</div>
+            <div class="section-content">
+                <p><strong>Archivos Digitales:</strong> Se entregarán en USB dentro de 7-10 días posteriores al evento</p>
+                <p><strong>Fotolibro:</strong> Se entregará dentro de 15-20 días posteriores al evento</p>
+                <p><strong>Ampliación con Marco:</strong> Se entregará dentro de 15-20 días posteriores al evento</p>
+            </div>
+        </div>
+
+        <div class="important">
+            <strong>⚠️ NOTA IMPORTANTE:</strong> Se reserva una sola fecha por día. Es recomendable confirmar y hacer el pago del anticipo con anticipación para asegurar la disponibilidad de la fecha deseada.
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-block">
+                <p style="margin-bottom: 80px; font-weight: bold;">EL CLIENTE</p>
+                <div class="signature-line">
+                    <p>Nombre: Esteban Santos Aviña</p>
+                    <p>Firma</p>
+                </div>
+            </div>
+            <div class="signature-block">
+                <p style="margin-bottom: 80px; font-weight: bold;">FOTÓGRAFO</p>
+                <div class="signature-line">
+                    <p>Nombre: Juan Arturo Cruz Armenta</p>
+                    <p>Firma</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-field">
+            <p><strong>Fecha:</strong> _________________________ </p>
+        </div>
+
+        <div class="print-button">
+            <button class="btn" onclick="window.print()">Imprimir Contrato</button>
+        </div>
+    </div>
+</body>
+</html>

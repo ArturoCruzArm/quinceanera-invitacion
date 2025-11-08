@@ -184,50 +184,49 @@
             font-size: 1.1em;
         }
 
-        .music-player {
+        .floating-music-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            text-align: center;
-            color: white;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
         }
 
-        .music-player h3 {
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            letter-spacing: 0.5px;
+        .floating-music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
         }
 
-        .music-player audio {
-            width: 100%;
-            max-width: 400px;
-            height: 40px;
-            outline: none;
+        .floating-music-btn:active {
+            transform: scale(0.95);
         }
 
-        .music-player audio::-webkit-media-controls-panel {
-            background-color: rgba(255, 255, 255, 0.1);
+        .floating-music-btn.playing {
+            animation: pulse 1.5s infinite;
         }
 
-        .music-player audio::-webkit-media-controls-mute-button {
-            filter: invert(1);
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(102, 126, 234, 0.8);
+            }
         }
 
-        .music-player audio::-webkit-media-controls-play-button {
-            filter: invert(1);
-        }
-
-        .music-player audio::-webkit-media-controls-timeline {
-            filter: invert(1);
-        }
-
-        .music-info {
-            font-size: 0.9em;
-            margin-top: 10px;
-            opacity: 0.9;
-            font-style: italic;
+        audio {
+            display: none;
         }
 
         @media (max-width: 600px) {
@@ -253,16 +252,11 @@
             <div class="subtitle">XV AÑOS</div>
         </div>
 
-        <div class="music-player">
-            <h3>🎵 Brilla María Esther 🎵</h3>
-            <audio controls>
-                <source src="brilla-mari%CC%81a-esther.mp3" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <div class="music-info">
-                Una canción especial para esta celebración
-            </div>
-        </div>
+        <audio id="miMusica">
+            <source src="brilla-mari%CC%81a-esther.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="floating-music-btn" id="musicBtn" title="Reproducir música">🎵</button>
 
         <div class="content">
             <div class="decorative">✨ 💖 ✨</div>
@@ -324,5 +318,46 @@
             <p>"Quince años de bendiciones y alegría"</p>
         </div>
     </div>
+
+    <script>
+        const miMusica = document.getElementById('miMusica');
+        const musicBtn = document.getElementById('musicBtn');
+        let isPlaying = false;
+        let hasStarted = false;
+
+        // Iniciar la música al primer click en la página
+        document.addEventListener('click', function initMusic(e) {
+            if (!hasStarted && e.target !== musicBtn) {
+                miMusica.play();
+                isPlaying = true;
+                hasStarted = true;
+                musicBtn.classList.add('playing');
+                document.removeEventListener('click', initMusic);
+            }
+        });
+
+        // Controlar play/pausa con el botón
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (isPlaying) {
+                miMusica.pause();
+                musicBtn.classList.remove('playing');
+                musicBtn.title = 'Continuar música';
+                isPlaying = false;
+            } else {
+                miMusica.play();
+                musicBtn.classList.add('playing');
+                musicBtn.title = 'Pausar música';
+                isPlaying = true;
+            }
+        });
+
+        // Actualizar el estado del botón cuando la música termina
+        miMusica.addEventListener('ended', function() {
+            isPlaying = false;
+            musicBtn.classList.remove('playing');
+            musicBtn.title = 'Reproducir música';
+        });
+    </script>
 </body>
 </html>

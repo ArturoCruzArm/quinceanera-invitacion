@@ -184,6 +184,52 @@
             font-size: 1.1em;
         }
 
+        .music-player {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .music-player h3 {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+        }
+
+        .music-player audio {
+            width: 100%;
+            max-width: 400px;
+            height: 40px;
+            outline: none;
+        }
+
+        .music-player audio::-webkit-media-controls-panel {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .music-player audio::-webkit-media-controls-mute-button {
+            filter: invert(1);
+        }
+
+        .music-player audio::-webkit-media-controls-play-button {
+            filter: invert(1);
+        }
+
+        .music-player audio::-webkit-media-controls-timeline {
+            filter: invert(1);
+        }
+
+        .music-info {
+            font-size: 0.9em;
+            margin-top: 10px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
@@ -205,6 +251,17 @@
             <h1>María Esther</h1>
             <p>Te invita a celebrar sus</p>
             <div class="subtitle">XV AÑOS</div>
+        </div>
+
+        <div class="music-player">
+            <h3>🎵 Brilla María Esther 🎵</h3>
+            <audio controls>
+                <source src="brilla-mari%CC%81a-esther.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div class="music-info">
+                Una canción especial para esta celebración
+            </div>
         </div>
 
         <div class="content">

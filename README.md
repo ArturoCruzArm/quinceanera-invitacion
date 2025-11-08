@@ -41,6 +41,22 @@ Invitación y contrato de servicios para la celebración de los XV años de Mar�
 - [Invitación](index.html) - Ver invitación completa
 - [Contrato de Servicios](contrato.html) - Ver detalles del contrato
 
+## 🌐 Ver en línea
+
+Este repositorio está configurado con GitHub Pages. Una vez habilitado, pudrás acceder a:
+- **Invitación:** https://arturoczuzarm.github.io/quinceanera-invitacion/
+- **Contrato:** https://arturoczuzarm.github.io/quinceanera-invitacion/contrato.html
+
+### Habilitar GitHub Pages
+
+1. Ve a la configuración del repositorio (Settings)
+2. Busca "Pages" en el menú lateral
+3. Selecciona "Deploy from a branch"
+4. Elige "master" como rama
+5. Guarda los cambios
+
+La página estará disponible en unos minutos.
+
 ## 📞 Contacto
 
 **Fotógrafo:** Juan Arturo Cruz Armenta
@@ -50,4 +66,4 @@ Invitación y contrato de servicios para la celebración de los XV años de Mar�
 
 ---
 
-*Diseñado con 💖 para María Esther*
+*Diseñado con 💖 para María Esther - 19 de Diciembre de 2025*

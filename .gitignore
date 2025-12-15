@@ -1,5 +1,13 @@
-# Fotos originales (muy pesadas)
-fotos/
+# Fotos originales JPG (muy pesadas) - no subir
+fotos/*.JPG
+fotos/*.jpg
+fotos/*.JPEG
+fotos/*.jpeg
+
+# Permitir fotos webp optimizadas
+!fotos/*.webp
+
+# Carpeta temporal de conversión
 fotos-webp/
 
 # Archivos temporales

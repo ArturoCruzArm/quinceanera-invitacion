@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Fotos - María Esther XV Años</title>
+    <link rel="stylesheet" href="css/selector.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">Selector de Fotos</h1>
+            <h2 class="subtitle">XV Años de María Esther</h2>
+            <p class="instructions">Haz clic en cada foto para seleccionar qué quieres hacer con ella. Utiliza los botones de filtro para ver las fotos por categoría.</p>
+        </div>
+    </header>
+
+    <!-- Control Panel -->
+    <section class="control-panel">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-card ampliacion">
+                    <div class="stat-icon">🖼️</div>
+                    <div class="stat-info">
+                        <h3>Ampliación</h3>
+                        <p class="stat-count" id="countAmpliacion">0</p>
+                        <small style="font-size: 0.75rem; opacity: 0.7;">Recomendado: 1</small>
+                    </div>
+                </div>
+                <div class="stat-card impresion">
+                    <div class="stat-icon">📸</div>
+                    <div class="stat-info">
+                        <h3>Fotolibro</h3>
+                        <p class="stat-count" id="countImpresion">0</p>
+                        <small style="font-size: 0.75rem; opacity: 0.7;">Máximo: 100 fotos</small>
+                    </div>
+                </div>
+                <div class="stat-card redes-sociales">
+                    <div class="stat-icon">📱</div>
+                    <div class="stat-info">
+                        <h3>Redes Sociales</h3>
+                        <p class="stat-count" id="countRedesSociales">0</p>
+                    </div>
+                </div>
+                <div class="stat-card descartada">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-info">
+                        <h3>Descartadas</h3>
+                        <p class="stat-count" id="countDescartada">0</p>
+                    </div>
+                </div>
+                <div class="stat-card sin-clasificar">
+                    <div class="stat-icon">⭕</div>
+                    <div class="stat-info">
+                        <h3>Sin Clasificar</h3>
+                        <p class="stat-count" id="countSinClasificar">292</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-filter" id="btnFilterAll">Todas (292)</button>
+                <button class="btn btn-filter filter-ampliacion" id="btnFilterAmpliacion">Ampliación (0/1)</button>
+                <button class="btn btn-filter filter-impresion" id="btnFilterImpresion">Fotolibro (0/100)</button>
+                <button class="btn btn-filter filter-redes-sociales" id="btnFilterRedesSociales">Redes (0)</button>
+                <button class="btn btn-filter filter-descartada" id="btnFilterDescartada">Descartadas (0)</button>
+                <button class="btn btn-filter filter-sin-clasificar" id="btnFilterSinClasificar">Sin Clasificar (292)</button>
+            </div>
+
+            <div class="action-buttons secondary">
+                <button class="btn btn-export" id="btnExport">📥 Descargar Reporte</button>
+                <button class="btn btn-share" id="btnShare">📤 Copiar Resumen</button>
+                <button class="btn btn-clear" id="btnClear">🗑️ Limpiar Todo</button>
+            </div>
+            <p class="instructions" style="margin-top: 15px; font-size: 0.9rem; color: #666; text-align: center;">
+                <strong>Instrucciones de filtrado:</strong> Haz clic en los botones de arriba para ver solo las fotos de esa categoría.
+                Cuando abres una foto, puedes navegar entre las fotos filtradas con las flechas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="photos-grid" id="photosGrid"></div>
+        </div>
+    </section>
+
+    <!-- Modal for Photo Selection -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <button class="modal-nav modal-nav-prev" id="btnPrevPhoto" title="Foto anterior (←)">
+                <span>‹</span>
+            </button>
+            <button class="modal-nav modal-nav-next" id="btnNextPhoto" title="Siguiente foto (→)">
+                <span>›</span>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Foto seleccionada">
+                    <div class="modal-photo-number" id="modalPhotoNumber"></div>
+                </div>
+                <div class="modal-options">
+                    <h3>¿Qué quieres hacer con esta foto?</h3>
+                    <p class="modal-subtitle">Puedes seleccionar una o varias opciones</p>
+
+                    <div class="option-buttons">
+                        <button class="option-btn ampliacion" data-category="ampliacion">
+                            <span class="option-icon">🖼️</span>
+                            <span class="option-text">Ampliación (60x80 cm)<br><small style="font-size: 0.75rem; opacity: 0.7;">(recom. 1)</small></span>
+                            <span class="option-check">✓</span>
+                        </button>
+                        <button class="option-btn impresion" data-category="impresion">
+                            <span class="option-icon">📸</span>
+                            <span class="option-text">Para Fotolibro<br><small style="font-size: 0.75rem; opacity: 0.7;">(máx. 100)</small></span>
+                            <span class="option-check">✓</span>
+                        </button>
+                        <button class="option-btn redes_sociales" data-category="redes_sociales">
+                            <span class="option-icon">📱</span>
+                            <span class="option-text">Redes Sociales</span>
+                            <span class="option-check">✓</span>
+                        </button>
+                        <button class="option-btn descartada" data-category="descartada">
+                            <span class="option-icon">❌</span>
+                            <span class="option-text">Descartar</span>
+                            <span class="option-check">✓</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn btn-save" id="btnSaveSelection">Guardar y Cerrar</button>
+                        <button class="btn btn-cancel" id="btnCancelSelection">Cerrar sin Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/selector.js"></script>
+
+    <footer style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; padding: 30px 20px; margin-top: 40px;">
+        <p style="margin: 8px 0; font-size: 1.1rem; font-weight: 600;">Producciones Foro 7</p>
+        <p style="margin: 8px 0; opacity: 0.95;">Fotografía, Video, Dron e Invitaciones Web</p>
+        <p style="margin: 8px 0;">📱 Contacto: 477-920-3776</p>
+    </footer>
+</body>
+</html>

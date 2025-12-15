@@ -1,4 +1,14 @@
-.DS_Store
-.vscode/
-*.log
+# Fotos originales (muy pesadas)
+fotos/
+fotos-webp/
+
+# Archivos temporales
+*.bak
+photo-list.txt
+
+# Node modules (si se usa)
 node_modules/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
